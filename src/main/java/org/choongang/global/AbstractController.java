@@ -1,6 +1,8 @@
 package org.choongang.global;
 
 import org.choongang.global.constants.Menu;
+import org.choongang.main.MainRouter;
+import org.choongang.main.controllers.MainController;
 
 import java.util.Scanner;
 
@@ -14,7 +16,8 @@ public abstract class AbstractController implements Controller {
      * 상단 공통 출력 부분
      */
     public void common(){
-
+        System.out.println("묵찌빠 프로그램");
+        System.out.println("------------------------");
     }
 
     /**
@@ -57,6 +60,7 @@ public abstract class AbstractController implements Controller {
         }
 
         // 메뉴 컨트롤러 변경 처리 - Router
+        MainRouter.getInstance().change(menu);
 
     }
 }
