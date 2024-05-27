@@ -62,7 +62,7 @@ public abstract class AbstractController implements Controller {
     }
 
     /**
-     * 템플릿 메서드 패턴 : 특정 절차가 고정되어 있는 경우
+     * 템플릿 메서드 패턴 : 특정 절차가 고정되어 있는 경우!
      *
      */
     @Override
