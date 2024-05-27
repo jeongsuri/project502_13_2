@@ -20,7 +20,7 @@ public abstract class AbstractController implements Controller {
      */
     public void common() {
         System.out.println("학생관리 프로그램 Ver1.0");
-        Templates.getInstance().doubleLine();
+        System.out.println(Templates.getInstance().doubleLine());
     }
 
     /**
@@ -29,7 +29,7 @@ public abstract class AbstractController implements Controller {
      *  - 숫자: 메뉴 항목
      */
     public void prompt() {
-        Templates.getInstance().doubleLine();
+        System.out.println(Templates.getInstance().doubleLine());
         System.out.print("메뉴 선택: ");
         String menu = sc.nextLine();
         if (menu.equals("q") || menu.equals("quit") || menu.equals("exit")) {
