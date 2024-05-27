@@ -6,6 +6,7 @@ import org.choongang.template.Template;
 import org.choongang.template.Templates;
 
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 public abstract class AbstractController implements Controller {
 
@@ -29,7 +30,6 @@ public abstract class AbstractController implements Controller {
      *  - 숫자: 메뉴 항목
      */
     public void prompt() {
-        System.out.println(Templates.getInstance().doubleLine());
         System.out.print("메뉴 선택: ");
         String menu = sc.nextLine();
         if (menu.equals("q") || menu.equals("quit") || menu.equals("exit")) {
@@ -43,6 +43,22 @@ public abstract class AbstractController implements Controller {
         } catch (Exception e) {
             System.out.println("메뉴는 숫자로 입력하세요.");
         }
+    }
+
+    /**
+     * 입력과 검증을 함께 진행
+     * @param message : 항목 메세지
+     * @param prdicate : 판별식
+     */
+
+    protected String promptWithValidation(String message, Predicate<String> prdicate){
+        String str = null;
+        do{
+            System.out.print(message);
+            str = sc.nextLine();
+        }while(!prdicate.test(str));
+
+        return str;
     }
 
     /**
